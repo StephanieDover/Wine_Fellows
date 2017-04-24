@@ -29,3 +29,24 @@ try {
 } catch (error) {
   console.log('error while trying to retrieve data...');
 }
+//redirects to edit porfile
+// function profileReDirect() {
+//   window.location.replace('editprofile.html');
+// }
+// creates new users from form input
+function handleUserGenerator (event){
+  event.preventDefault();
+  var form = event.target;
+  var userGeneratorFirstName = form.firstName.value;
+  var userGeneratorLastName = form.lastName.value;
+  var userGeneratorUserName = form.userName.value;
+  var userGeneratorColorPreference = form.colorPreference.value;
+  var userGeneratorFavWine = form.favWine.value;
+  var userGeneratorFavWinery = form.favWinery.value;
+  var generatedUser = new User(userGeneratorFirstName, userGeneratorLastName, userGeneratorUserName, userGeneratorFavWine, userGeneratorFavWinery, userGeneratorColorPreference);
+  this.favWine.push(userGeneratorFavWine);
+  users.push(generatedUser);
+  // profileReDirect();
+}
+var userGeneratorFormSubmit = document. getElementById('createUser');
+userGeneratorFormSubmit.addEventListener('submit', handleUserGenerator);
