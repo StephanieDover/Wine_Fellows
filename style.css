@@ -1,1 +1,11 @@
 /*reset*/
+form {
+  width: 300px;
+  heigt:600px;
+}
+input {
+  float:right;
+}
+p {
+  display: inline;
+}
