@@ -17,3 +17,15 @@ function Comment(userName, comment, date) {
 }
 
 var users = [];
+
+// local storage object...!
+var dataStorage= {
+  title: 'Data on Users',
+  dataForLocal: [],
+};
+
+try {
+  dataStorage = JSON.parse(localStorage.dataStorage);
+} catch (error) {
+  console.log('error while trying to retrieve data...');
+}
