@@ -39,6 +39,7 @@ function handleUserGenerator (event){
   var userGeneratorFavWine = form.favWine.value;
   var userGeneratorFavWinery = form.favWinery.value;
   var generatedUser = new User(userGeneratorFirstName, userGeneratorLastName, userGeneratorUserName, userGeneratorFavWine, userGeneratorFavWinery, userGeneratorColorPreference);
+  generatedUser.users.push();
 }
 var userGeneratorFormSubmit = document. getElementById('createUser');
 userGeneratorFormSubmit.addEventListener('submit', handleUserGenerator);
