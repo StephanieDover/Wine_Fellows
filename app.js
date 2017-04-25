@@ -16,8 +16,51 @@ function Comment(userName, comment, date) {
   this.date = date;
 }
 
-var users = [];
+function handleLoginSubmit(event) {
+  var form = event.target;
+  var userNameEntry = form.login.value;
+  console.log(userNameEntry);
+  for (var i=0; i <= users.length; i++) {
+    if (userNameEntry == users[i].userName){
+      // window.location = '#';
+      console.log('yayy');
+    } else {
+      form.login.placeholder = 'User not found!!!';
+      console.log('user not found!');
+    }
+    form.reset();
+  }
+}
 
+var users = [];
+// local storage object...!
+
+var testUser= new User('Michael','Axelson', 'Maxelson11',['merlot','malbec'], 'Chatuea St. Michelle','red');
+
+users.push(testUser);
+
+
+try {
+  localStorage.users = JSON.stringify(users);
+} catch (error) {
+  console.log('something went wrong', error);
+}
+
+
+try {
+  users = JSON.parse(localStorage.users);
+  console.log('stringifying...');
+} catch (error) {
+  console.log('something went wrong', error);
+}
+
+
+var loginLoad = document.getElementById('login-form');
+loginLoad.addEventListener('submit', handleLoginSubmit);
+//redirects to edit porfile
+// function profileReDirect() {
+//   window.location.replace('editprofile.html');
+// }
 // creates new users from form input
 function handleUserGenerator (event){
   event.preventDefault();
