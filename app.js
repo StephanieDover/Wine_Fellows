@@ -96,11 +96,23 @@ function uncheck() {
   document.getElementById(currentUser).checked = false;
 }
 
+function inputchecker(id) {
+  var inputId = document.getElementById(id);
+
+}
+//users[currentUser];
+
 function loadUserData(){
+
+=======
 
   var lastName = setAttribute;
   var UserName = getElementById('');
 
+
+
+  var lastName = setAttribute.
+  var UserName = getElementById('');
   var userGeneratorLastName = lastName.value;
   var userGeneratorUserName = userName.value;
   var userGeneratorFavWine = favWine.value;
