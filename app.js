@@ -10,6 +10,7 @@ function User (first, last, userName, favWine, favWinery, colorPref) {
   this.favWine = [];
   this.favWinery = favWinery;
   this.colorPref = colorPref;
+  this.bio = '';
   this.id = Math.random()+''+Math.random();
 }
 
@@ -19,7 +20,7 @@ function Comment(userName, comment, date) {
   this.date = date;
 }
 
-
+var userId;
 function handleLoginSubmit(event) {
   event.preventDefault();
   var form = event.target;
@@ -27,6 +28,7 @@ function handleLoginSubmit(event) {
   console.log(userNameEntry);
   for (var i = 0; i < users.length; i++) {
     if (userNameEntry === users[i].userName){
+      userId = users[i].id;
       // window.location = '#';
       console.log('yayy');
       currentUser = users[i].id;
@@ -61,6 +63,18 @@ function handleUserGenerator (event){
   }
   catch (error) {
     console.log('something went wrong', error);
+  }
+}
+function handleUserBio (event){
+  event.preventDefault();
+  var form = event.target;
+  var userBioUpdate = form.userBio.value;
+  this.bio = userBioUpdate;
+  form.reset();
+  try {
+    localStorage.users[].bio = JSON.stringify(users);
+  }
+  catch (error) {
   }
 }
 
@@ -112,3 +126,5 @@ loginLoad.addEventListener('submit', handleLoginSubmit);
 // creates new users from form input
 var userGeneratorFormSubmit = document.getElementById('createUser');
 userGeneratorFormSubmit.addEventListener('submit', handleUserGenerator);
+var bioFormSubmit = document.getElementById('bio');
+userGeneratorFormSubmit.addEventListener('submit', handleUserBio);
