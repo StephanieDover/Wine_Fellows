@@ -29,7 +29,9 @@ function handleLoginSubmit(event) {
     if (userNameEntry === users[i].userName){
       // window.location = '#';
       console.log('yayy');
-      currentUser = users[i].id;
+      currentUser = this.id;
+      console.log(currentUser);
+
     } else {
       form.login.placeholder = 'User not found!!!';
       console.log('user not found!');
@@ -64,29 +66,29 @@ function handleUserGenerator (event){
   }
 }
 
-function check(id) {
-    document.getElementById(id).checked = true;
-}
-
-function uncheck() {
-    document.getElementById(id).checked = false;
-}
-
-function loadUserData(){
-  
-  var lastName = setAttribute.
-  var UserName = getElementById('')
-
-  var userGeneratorLastName = lastName.value;
-  var userGeneratorUserName = userName.value;
-  var userGeneratorFavWine = favWine.value;
-  var userGeneratorFavWinery = favWinery.value;
-  var userGeneratorColorPreference = colorPreference.value
-
-  console.log(currentUser);
-}
-
-loadUserData();
+// function check(id) {
+//     document.getElementById(id).checked = true;
+// }
+//
+// function uncheck() {
+//     document.getElementById(id).checked = false;
+// }
+//
+// function loadUserData(){
+//
+//   var lastName = setAttribute.
+//   // var UserName = getElementById('')
+//
+//   var userGeneratorLastName = lastName.value;
+//   var userGeneratorUserName = userName.value;
+//   var userGeneratorFavWine = favWine.value;
+//   var userGeneratorFavWinery = favWinery.value;
+//   var userGeneratorColorPreference = colorPreference.value
+//
+//   console.log(currentUser);
+// }
+//
+// loadUserData();
 
 // local storage object...!
 
