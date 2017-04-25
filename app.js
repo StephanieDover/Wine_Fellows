@@ -1,5 +1,7 @@
 'use strict';
 
+
+var currentUser;
 var users = [];
 function User (first, last, userName, favWine, favWinery, colorPref) {
   this.first= first;
@@ -27,6 +29,7 @@ function handleLoginSubmit(event) {
     if (userNameEntry === users[i].userName){
       // window.location = '#';
       console.log('yayy');
+      currentUser = users[i].id;
     } else {
       form.login.placeholder = 'User not found!!!';
       console.log('user not found!');
@@ -46,7 +49,7 @@ function handleUserGenerator (event){
   var userGeneratorColorPreference = form.colorPreference.value;
 
   var generatedUser = new User(userGeneratorFirstName, userGeneratorLastName, userGeneratorUserName, userGeneratorFavWine, userGeneratorFavWinery, userGeneratorColorPreference);
-
+  currentUser = users[i].id;
   generatedUser.favWine.push(userGeneratorFavWine);
   users.push(generatedUser);
   console.log(generatedUser);
@@ -60,6 +63,30 @@ function handleUserGenerator (event){
     console.log('something went wrong', error);
   }
 }
+
+function check(id) {
+    document.getElementById(id).checked = true;
+}
+
+function uncheck() {
+    document.getElementById(id).checked = false;
+}
+
+function loadUserData(){
+  
+  var lastName = setAttribute.
+  var UserName = getElementById('')
+
+  var userGeneratorLastName = lastName.value;
+  var userGeneratorUserName = userName.value;
+  var userGeneratorFavWine = favWine.value;
+  var userGeneratorFavWinery = favWinery.value;
+  var userGeneratorColorPreference = colorPreference.value
+
+  console.log(currentUser);
+}
+
+loadUserData();
 
 // local storage object...!
 
