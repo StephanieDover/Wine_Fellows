@@ -2,18 +2,30 @@
 
 function handleUserBio (event){
   event.preventDefault();
+  usersBio.textContent = '';
   var form = event.target;
   var userBioUpdate = form.userBio.value;
-  this.bio = userBioUpdate;
+  console.log(userBioUpdate);
+  users[currentUser].bio = userBioUpdate;
   form.reset();
+  populateBio();
   try {
-    localStorage.users[currentUser].bio = JSON.stringify(users);
+    localStorage.users = JSON.stringify(users);
+    console.log('users', users);
   }
   catch (error) {
-    console.log('failed to save bio update');
+    console.log('something went wrong', error);
   }
-}
 
+}
+function populateBio(){
+  var bioUpdate = document.getElementById('usersBio');
+  var text = document.createTextNode(users[currentUser].bio);
+  var list = document.createElement('li');
+  bioUpdate.appendChild(list);
+  list.appendChild(text);
+}
+populateBio();
 function check(currentUser) {
   document.getElementById(currentUser).checked = true;
 }
