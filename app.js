@@ -86,16 +86,22 @@ function uncheck() {
     document.getElementById(id).checked = false;
 }
 
-function loadUserData(){
-  
-  var lastName = setAttribute.
-  var UserName = getElementById('')
+function inputchecker(id) {
+  var inputId = document.getElementById(id);
 
+}
+//users[currentUser];
+
+function loadUserData(){
+
+
+  var lastName = setAttribute.
+  var UserName = getElementById('');
   var userGeneratorLastName = lastName.value;
   var userGeneratorUserName = userName.value;
   var userGeneratorFavWine = favWine.value;
   var userGeneratorFavWinery = favWinery.value;
-  var userGeneratorColorPreference = colorPreference.value
+  var userGeneratorColorPreference = colorPreference.value;
 
   console.log(currentUser);
 }
