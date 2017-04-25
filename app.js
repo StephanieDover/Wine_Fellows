@@ -57,7 +57,6 @@ try {
 
 var loginLoad = document.getElementById('login-form');
 loginLoad.addEventListener('submit', handleLoginSubmit);
-=======
 //redirects to edit porfile
 // function profileReDirect() {
 //   window.location.replace('editprofile.html');
@@ -73,9 +72,9 @@ function handleUserGenerator (event){
   var userGeneratorFavWine = form.favWine.value;
   var userGeneratorFavWinery = form.favWinery.value;
   var generatedUser = new User(userGeneratorFirstName, userGeneratorLastName, userGeneratorUserName, userGeneratorFavWine, userGeneratorFavWinery, userGeneratorColorPreference);
-  this.favWine.push(userGeneratorFavWine);
+  generatedUser.favWine.push(userGeneratorFavWine);
   users.push(generatedUser);
-  // profileReDirect();
+  profileReDirect('editprofile.html');
 }
 var userGeneratorFormSubmit = document. getElementById('createUser');
 userGeneratorFormSubmit.addEventListener('submit', handleUserGenerator);
