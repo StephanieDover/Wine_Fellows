@@ -5,6 +5,10 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<div class="app">
+=======
 
   <form id="wineList">
     <h4>Favorite Wine Color</h4>
@@ -18,6 +22,9 @@
   </form>
 
   <div class="app">
+>>>>>>> 71e2822b76500be5fb59e093676dbf766ec8420c
+=======
+>>>>>>> 22334b76e91b790d75eae086d087c2688442105a
   <nav id="headerBar" class="header-bar">
     <ul>
       <li>
@@ -27,7 +34,7 @@
         <a href="community.html"> Community Page </a>
       </li>
       <li>
-        <a href="index.html"> Logout </a>
+        <a href="index.html"> Logout </a> <!--localStorage.removeItem(currentUser); on logout-->
       </li>
       <li>
         <img src="./imgs/van-pic.png" class="profile-pic" />
@@ -35,6 +42,17 @@
     </ul>
   </nav>
 </div>
+<form id="wineList">
+  <h4>Favorite Wine Color</h4>
+  <p>Red</p><input id='red' name="colorPreference" type="checkbox" placeholder="Wine color preference" value="red"/></br>
+  <p>White</p><input id='white' name="colorPreference" type="checkbox" placeholder="Wine color preference" value="white"/></br>
+  <h4>Favorite Wine</h4>
+  <p>Pinot Grigio</p><input id='pinot'name="favWine" type="checkbox" placeholder="Favorite wine" value="Pinot Grigio" /></br>
+  <h4>Favorite Winery</h4>
+  <p>St. Michelles</p><input name="favWinery" type="checkbox" placeholder="Favorite winery" value="st. Michelles" /></br>
+
+  <button type="submit"> Find your Winefellow! </button>
+</form>
 <form>
   <textarea name="userBio" id="bio"></textarea></br>
   <button>Submit Bio</button>

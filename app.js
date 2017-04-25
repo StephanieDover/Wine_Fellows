@@ -1,6 +1,5 @@
 'use strict';
 
-
 var currentUser;
 var users = [];
 function User (first, last, userName, favWine, favWinery, colorPref) {
@@ -31,6 +30,13 @@ function handleLoginSubmit(event) {
       // window.location = '#';
       userFound = true;
       currentUser = i;
+      try {
+        localStorage.currentUser = JSON.stringify(currentUser);
+        console.log('users', users);
+      }
+      catch (error) {
+        console.log('current user index not saved');
+      }
       console.log(currentUser);
     } else {
       form.login.placeholder = 'User not found!!!';
@@ -57,7 +63,9 @@ function handleUserGenerator (event){
   users.push(generatedUser);
   console.log(generatedUser);
   // profileReDirect('editprofile.html');
+  profileReDirect();
   form.reset();
+
   try {
     localStorage.users = JSON.stringify(users);
     console.log('users', users);
@@ -66,25 +74,26 @@ function handleUserGenerator (event){
     console.log('something went wrong', error);
   }
 }
-// function handleUserBio (event){
-//   event.preventDefault();
-//   var form = event.target;
-//   var userBioUpdate = form.userBio.value;
-//   this.bio = userBioUpdate;
-//   form.reset();
-//   try {
-//     localStorage.users[].bio = JSON.stringify(users);
-//   }
-//   catch (error) {
-//   }
-// }
+function handleUserBio (event){
+  event.preventDefault();
+  var form = event.target;
+  var userBioUpdate = form.userBio.value;
+  this.bio = userBioUpdate;
+  form.reset();
+  try {
+    localStorage.users[currentUser].bio = JSON.stringify(users);
+  }
+  catch (error) {
+    console.log('failed to save bio update');
+  }
+}
 
-function check(id) {
-  document.getElementById(id).checked = true;
+function check(currentUser) {
+  document.getElementById(currentUser).checked = true;
 }
 
 function uncheck() {
-  document.getElementById(id).checked = false;
+  document.getElementById(currentUser).checked = false;
 }
 
 function inputchecker(id) {
@@ -127,6 +136,12 @@ try {
 catch (error) {
   console.log('something went wrong', error);
 }
+try {
+  currentUser = JSON.parse(localStorage.currentUser);
+}
+catch (error) {
+  console.log('current user not returned');
+}
 
 
 
@@ -140,4 +155,4 @@ function profileReDirect() {
 var userGeneratorFormSubmit = document.getElementById('createUser');
 userGeneratorFormSubmit.addEventListener('submit', handleUserGenerator);
 var bioFormSubmit = document.getElementById('bio');
-userGeneratorFormSubmit.addEventListener('submit', handleUserBio);
+bioFormSubmit.addEventListener('submit', handleUserBio);
