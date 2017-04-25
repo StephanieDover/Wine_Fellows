@@ -18,21 +18,6 @@ function Comment(userName, comment, date) {
 
 var users = [];
 
-// local storage object...!
-var dataStorage= {
-  title: 'Data on Users',
-  dataForLocal: [],
-};
-
-try {
-  dataStorage = JSON.parse(localStorage.dataStorage);
-} catch (error) {
-  console.log('error while trying to retrieve data...');
-}
-//redirects to edit porfile
-// function profileReDirect() {
-//   window.location.replace('editprofile.html');
-// }
 // creates new users from form input
 function handleUserGenerator (event){
   event.preventDefault();
@@ -44,9 +29,9 @@ function handleUserGenerator (event){
   var userGeneratorFavWine = form.favWine.value;
   var userGeneratorFavWinery = form.favWinery.value;
   var generatedUser = new User(userGeneratorFirstName, userGeneratorLastName, userGeneratorUserName, userGeneratorFavWine, userGeneratorFavWinery, userGeneratorColorPreference);
-  this.favWine.push(userGeneratorFavWine);
+  generatedUser.favWine.push(userGeneratorFavWine);
   users.push(generatedUser);
-  // profileReDirect();
+  profileReDirect('editprofile.html');
 }
 var userGeneratorFormSubmit = document. getElementById('createUser');
 userGeneratorFormSubmit.addEventListener('submit', handleUserGenerator);
