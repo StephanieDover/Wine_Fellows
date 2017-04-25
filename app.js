@@ -17,11 +17,12 @@ function Comment(userName, comment, date) {
 }
 
 function handleLoginSubmit(event) {
+  event.preventDefault();
   var form = event.target;
   var userNameEntry = form.login.value;
   console.log(userNameEntry);
-  for (var i=0; i <= users.length; i++) {
-    if (userNameEntry == users[i].userName){
+  for (var i = 0; i < users.length; i++) {
+    if (userNameEntry === users[i].userName){
       // window.location = '#';
       console.log('yayy');
     } else {
