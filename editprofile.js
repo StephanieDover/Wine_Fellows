@@ -2,17 +2,58 @@
 
 function handleUserBio (event){
   event.preventDefault();
+  usersBio.textContent = '';
   var form = event.target;
   var userBioUpdate = form.userBio.value;
-  this.bio = userBioUpdate;
+  console.log(userBioUpdate);
+  users[currentUser].bio = userBioUpdate;
   form.reset();
+  populateBio();
   try {
-    localStorage.users[currentUser].bio = JSON.stringify(users);
+    localStorage.users = JSON.stringify(users);
+    console.log('users', users);
   }
   catch (error) {
-    console.log('failed to save bio update');
+    console.log('something went wrong', error);
+  }
+
+}
+function populateBio(){
+  var bioUpdate = document.getElementById('usersBio');
+  var text = document.createTextNode(users[currentUser].bio);
+  var list = document.createElement('li');
+  bioUpdate.appendChild(list);
+  list.appendChild(text);
+}
+populateBio();
+
+
+function handleUserWineReview (event) {
+  event.preventDefault();
+  usersWineReview.textContent = '';
+  var form = event.target;
+  var userWineReviewUpdate = form.userWineReview.value;
+  console.log(userWineReviewUpdate);
+  users[currentUser].wineReview.push(userWineReviewUpdate);
+  form.reset();
+  populateWineReview();
+
+  try{
+    localStorage.users = JSON.stringify(users);
+  }
+  catch (error) {
+    console.log('issue saving wine review', error);
   }
 }
+
+function populateWineReview() {
+  var wineReviewUpdate = document.getElementById('usersWineReview');
+  var text = document.createTextNode(users[currentUser].wineReview);
+  var list = document.createElement('li');
+  wineReviewUpdate.appendChild(list);
+  list.appendChild(text);
+}
+populateWineReview();
 
 function check(currentUser) {
   document.getElementById(currentUser).checked = true;
@@ -49,3 +90,6 @@ function loadUserData(){
 
 var bioFormSubmit = document.getElementById('bio');
 bioFormSubmit.addEventListener('submit', handleUserBio);
+
+var wineReviewFormSubmit = document.getElementById('wineReview');
+wineReviewFormSubmit.addEventListener('submit', handleUserWineReview);
