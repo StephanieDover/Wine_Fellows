@@ -16,16 +16,19 @@ catch (error) {
   console.log('current user not returned');
 }
 
-function User (first, last, userName, favWine, favWinery, colorPref) {
+function User (profilePic, first, last, userName, wineColor, favWine, favWinery) {
   this.first= first;
   this.last= last;
   this.userName = userName;
-  this.favWine = [];
-  this.favWinery = favWinery;
-  this.colorPref = colorPref;
+  this.wineColors = [];
+  this.favWines =[];
+  this.favWineries = [];
   this.bio = '';
-  this.wineReview = [];
   this.id = Math.random()+''+Math.random();
+  this.profilePic = profilePic;
+  this.reviews = [];
+  this.comments = [];
+  users.push(user);
 }
 
 function Comment(userName, comment, date) {
