@@ -25,6 +25,7 @@ function User (first, last, userName, favWine, favWinery, colorPref) {
   this.favWinery = favWinery;
   this.colorPref = colorPref;
   this.bio = '';
+  this.wineReview = [];
   this.id = Math.random()+''+Math.random();
 }
 

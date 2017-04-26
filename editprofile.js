@@ -26,6 +26,44 @@ function populateBio(){
   list.appendChild(text);
 }
 populateBio();
+
+
+function handleUserWineReview (event) {
+  event.preventDefault();
+  usersWineReview.textContent = '';
+  var form = event.target;
+  var userWineReviewUpdate = form.userWineReview.value;
+  console.log(userWineReviewUpdate);
+  users[currentUser].wineReview.push(userWineReviewUpdate);
+  form.reset();
+  populateWineReview();
+
+  try{
+    localStorage.users = JSON.stringify(users);
+  }
+  catch (error) {
+    console.log('issue saving wine review', error);
+  }
+}
+
+function populateWineReview() {
+  var wineReviewUpdate = document.getElementById('usersWineReview');
+  var text = document.createTextNode(users[currentUser].wineReview);
+  var list = document.createElement('li');
+  wineReviewUpdate.appendChild(list);
+  list.appendChild(text);
+}
+populateWineReview();
+
+}
+function populateBio(){
+  var bioUpdate = document.getElementById('usersBio');
+  var text = document.createTextNode(users[currentUser].bio);
+  var list = document.createElement('li');
+  bioUpdate.appendChild(list);
+  list.appendChild(text);
+}
+populateBio();
 function check(currentUser) {
   document.getElementById(currentUser).checked = true;
 }
@@ -61,3 +99,6 @@ function loadUserData(){
 
 var bioFormSubmit = document.getElementById('bio');
 bioFormSubmit.addEventListener('submit', handleUserBio);
+
+var wineReviewFormSubmit = document.getElementById('wineReview');
+wineReviewFormSubmit.addEventListener('submit', handleUserWineReview);
