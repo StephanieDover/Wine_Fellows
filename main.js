@@ -12,7 +12,7 @@ catch (error) {
 try {
   currentUser = JSON.parse(localStorage.currentUser);
 }
-catch (error) {
+catch (error) { 
   console.log('current user not returned');
 }
 
