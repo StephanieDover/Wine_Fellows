@@ -27,27 +27,28 @@ function handleLoginSubmit(event) {
   }
 }
 
+wines= ['red','white'];
+
+wineList=['cab','merlot','malbec'];
+favorite = ['st.michelles','columbia Valley'];
+
+
+ questionGenerator(wines, 'Whats your favorite wine?', 'favwine');
+
+
 function handleUserGenerator (event){
   event.preventDefault();
   var form = event.target;
+  for (var i=0; i<wines.length; )
   var userGeneratorFirstName = form.firstName.value;
   var userGeneratorLastName = form.lastName.value;
   var userGeneratorUserName = form.userName.value;
   var userGeneratorFavWine = form.favWine.checked;
   var userGeneratorFavWinery = form.favWinery.checked;
-  var userGeneratorRed = form.red.checked;
-  var userGeneratorWhite = form.white.checked;
-  var userGeneratorProfilePic= form.profilePic.value;
-  console.log(userGeneratorWhite);
-  var generatedUser = new User(userGeneratorProfilePic, userGeneratorFirstName, userGeneratorLastName, userGeneratorUserName, userGeneratorFavWine, userGeneratorFavWinery, userGeneratorRed, userGeneratorWhite);
-  if (userGeneratorRed === true){
-    userGeneratorRed = 'red';
-    users[currentUser].favWine.push(userGeneratorRed);
-  }
-  if (userGeneratorWhite === true){
-      userGeneratorWhite = 'white';
-      users[currentUser].favWine.push(userGeneratorWhite);
-  }
+  var userGeneratorProfilePic = form.profilePic.value;
+  var userGeneratorWineColor = form.wineColor.value;
+
+  var generatedUser = new User(userGeneratorProfilePic, userGeneratorFirstName, userGeneratorLastName, userGeneratorUserName, userGeneratorFavWine, userGeneratorFavWinery);
 
   users.push(generatedUser);
   console.log(generatedUser);
