@@ -16,7 +16,6 @@ catch (error) {
   console.log('current user not returned');
 }
 
-
 function User (profilePic, first, last, userName, wineColor, favWine, favWinery) {
   this.first= first;
   this.last= last;
@@ -29,6 +28,7 @@ function User (profilePic, first, last, userName, wineColor, favWine, favWinery)
   this.profilePic = profilePic;
   this.reviews = [];
   this.comments = [];
+  users.push(user);
 }
 
 function Comment(userName, comment, date) {
