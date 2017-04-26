@@ -63,8 +63,59 @@ populateWineReview();
 
 populateBio();
 
+function getProfilePic(img) {
+  var canvas = document.createElement('profilePic');
+  canvas.width = img.width;
+  canvas.height = img.height;
+
+  var ctx = canvas.getContext('');
+  ctx.drawImage(img, 0, 0);
+
+  var dataURL = canvas.toDataURL('imageURL');
+
+  return dataURL.replace(/^data:image\/(png|jpg);profilePic,/, '');
+}
+getProfilePic();
+
+function profilePicSubmitHandler(event){
+  event.preventDefault();
+  var form = event.target;
+  console.log(event.target);
+  var imageURL = form.imageURL.value;
+  var image = document.getElementById('profile-pic');
+  image.src = users[currentUser].profilePic;
+  users[currentUser].profilePic = imageURL;
+  try {
+    localStorage.users[currentUser].profilePic = JSON.stringify(users);
+  }
+  catch (error) {
+    console.log('failed to save bio update');
+  }
+}
+function testUserConstructor(profilePic, reviews, userName) {
+  this.profilePic = profilePic;
+  this.reviews= [];
+  this.userName= userName;
+}
+
+var testUser = new testUserConstructor('www.google.com', ['suh','dude'], 'mike');
+
+users.push(testUser);
+
+try {
+  localStorage.users = JSON.stringify(users);
+  console.log('users', users);
+}
+catch (error) {
+  console.log('something went wrong', error);
+}
 
 
+var setProfile = document.getElementById('set-profile');
+setProfile.addEventListener('submit', profilePicSubmitHandler);
+
+var bioFormSubmit = document.getElementById('wineList');
+bioFormSubmit.addEventListener('submit', handleUserBio);
 
 //users[currentUser];
   // var lastName = setAttribute;
