@@ -12,10 +12,9 @@ catch (error) {
 try {
   currentUser = JSON.parse(localStorage.currentUser);
 }
-catch (error) { 
+catch (error) {
   console.log('current user not returned');
 }
-
 
 function User (first, last, userName, favWine, favWinery, colorPref) {
   this.first= first;
