@@ -17,15 +17,17 @@ catch (error) {
 }
 
 
-function User (first, last, userName, favWine, favWinery, colorPref) {
+function User (profilePic, first, last, userName, favWine, favWinery, red, white) {
   this.first= first;
   this.last= last;
   this.userName = userName;
-  this.favWine = [];
-  this.favWinery = favWinery;
-  this.colorPref = colorPref;
+  this.wineColor=[];
+  this.favWine =[];
+  this.favWinery = [];
   this.bio = '';
   this.id = Math.random()+''+Math.random();
+  this.profilePic = profilePic;
+  this.review= []
 }
 
 function Comment(userName, comment, date) {

@@ -15,7 +15,8 @@ form {
   heigt:600px;
 }
 input {
-  float:right;
+  float: right;
+  display: inline;
 }
 p {
   display: inline;

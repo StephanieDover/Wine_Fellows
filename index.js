@@ -33,13 +33,22 @@ function handleUserGenerator (event){
   var userGeneratorFirstName = form.firstName.value;
   var userGeneratorLastName = form.lastName.value;
   var userGeneratorUserName = form.userName.value;
-  var userGeneratorFavWine = form.favWine.value;
-  var userGeneratorFavWinery = form.favWinery.value;
-  var userGeneratorColorPreference = form.colorPreference.value;
+  var userGeneratorFavWine = form.favWine.checked;
+  var userGeneratorFavWinery = form.favWinery.checked;
+  var userGeneratorRed = form.red.checked;
+  var userGeneratorWhite = form.white.checked;
+  var userGeneratorProfilePic= form.profilePic.value;
+  console.log(userGeneratorWhite);
+  var generatedUser = new User(userGeneratorProfilePic, userGeneratorFirstName, userGeneratorLastName, userGeneratorUserName, userGeneratorFavWine, userGeneratorFavWinery, userGeneratorRed, userGeneratorWhite);
+  if (userGeneratorRed === true){
+    userGeneratorRed = 'red';
+    users[currentUser].favWine.push(userGeneratorRed);
+  }
+  if (userGeneratorWhite === true){
+      userGeneratorWhite = 'white';
+      users[currentUser].favWine.push(userGeneratorWhite);
+  }
 
-  var generatedUser = new User(userGeneratorFirstName, userGeneratorLastName, userGeneratorUserName, userGeneratorFavWine, userGeneratorFavWinery, userGeneratorColorPreference);
-  currentUser =
-  generatedUser.favWine.push(userGeneratorFavWine);
   users.push(generatedUser);
   console.log(generatedUser);
   // profileReDirect('editprofile.html');

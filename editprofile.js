@@ -14,38 +14,47 @@ function handleUserBio (event){
   }
 }
 
-function check(currentUser) {
-  document.getElementById(currentUser).checked = true;
+function check(id) {
+  document.getElementById(id).checked = true;
 }
 
-function uncheck() {
-  document.getElementById(currentUser).checked = false;
+check('red');
+
+function infogenerator() {
+  if (users[currentUser]
 }
 
-function inputchecker(id) {
-  var inputId = document.getElementById(id);
-
+function uncheck(id) {
+  document.getElementById(id).checked = false;
 }
+
+
+
 //users[currentUser];
-
-function loadUserData(){
-
-
-  var lastName = setAttribute;
-  var UserName = getElementById('');
-
-
-
-  var lastName = setAttribute;
-  var UserName = getElementById('');
-  var userGeneratorLastName = lastName.value;
-  var userGeneratorUserName = userName.value;
-  var userGeneratorFavWine = favWine.value;
-  var userGeneratorFavWinery = favWinery.value;
-  var userGeneratorColorPreference = colorPreference.value;
-
-  console.log(currentUser);
+function findCheckedInfo(id) {
 }
+function loadUserData(){
+  var form = event.target;
+  var redwine = form.colorPreference.value;
+  var white = form.white.value;
+  users[currentUser].favWine = redwine;
+}
+
+users[currentUser];
+
+loadUserData();
+
+
+
+  // var lastName = setAttribute;
+  // var UserName = getElementById('');
+  // var userGeneratorLastName = lastName.value;
+  // var userGeneratorUserName = userName.value;
+  // var userGeneratorFavWine = favWine.value;
+  // var userGeneratorFavWinery = favWinery.value;
+  // var userGeneratorColorPreference = colorPreference.value;
+  //
+  // console.log(currentUser);
 
 var bioFormSubmit = document.getElementById('bio');
 bioFormSubmit.addEventListener('submit', handleUserBio);
