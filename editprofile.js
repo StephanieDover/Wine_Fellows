@@ -55,6 +55,15 @@ function populateWineReview() {
 }
 populateWineReview();
 
+}
+function populateBio(){
+  var bioUpdate = document.getElementById('usersBio');
+  var text = document.createTextNode(users[currentUser].bio);
+  var list = document.createElement('li');
+  bioUpdate.appendChild(list);
+  list.appendChild(text);
+}
+populateBio();
 function check(currentUser) {
   document.getElementById(currentUser).checked = true;
 }
