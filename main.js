@@ -22,9 +22,6 @@ catch (error) {
   console.log('something went wrong', error);
 }
 
-
-
-
 function User (profilePic, first, last, userName) {
   this.first= first;
   this.last= last;
