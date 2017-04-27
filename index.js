@@ -27,7 +27,6 @@ function handleLoginSubmit(event) {
     form.reset();
   }
 }
-
 function signUpHandleSubmit(event) {
   event.preventDefault();
   var form = event.target;
