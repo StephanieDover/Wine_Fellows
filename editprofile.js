@@ -1,5 +1,10 @@
 'use strict';
-
+currentUser = 0;
+console.log('lulwat', users);
+if (users[currentUser].profilePic){
+  var profilePic = document.getElementById('profile-pic');
+  profilePic.src = users[currentUser].profilePic;
+}
 function handleUserBio (event){
   event.preventDefault();
   usersBio.textContent = '';
@@ -62,20 +67,38 @@ populateWineReview();
 
 
 populateBio();
+function profilePicSubmitHandler(event){
 
+  event.preventDefault();
+  var form = event.target;
+  console.log(event.target);
+  var imageURL = form.imageURL.value;
+  var image = document.getElementById('profile-pic');
+  image.src = users[currentUser].profilePic;
+  users[currentUser].profilePic = imageURL;
+  try {
+    localStorage.users = JSON.stringify(users);
+    console.log('users', users);
+  }
+  catch (error) {
+    console.log('something went wrong', error);
+  }
+}
+function testUserConstructor(profilePic, reviews, userName) {
+  this.profilePic = profilePic;
+  this.reviews= [];
+  this.userName= userName;
+}
 
+var testUser = new testUserConstructor('www.google.com', ['suh','dude'], 'mike');
 
+users.push(testUser);
 
-//users[currentUser];
-  // var lastName = setAttribute;
-  // var UserName = getElementById('');
-  // var userGeneratorLastName = lastName.value;
-  // var userGeneratorUserName = userName.value;
-  // var userGeneratorFavWine = favWine.value;
-  // var userGeneratorFavWinery = favWinery.value;
-  // var userGeneratorColorPreference = colorPreference.value;
-  //
-  // console.log(currentUser);
+var setProfile = document.getElementById('set-profile');
+setProfile.addEventListener('submit', profilePicSubmitHandler);
+
+var bioFormSubmit = document.getElementById('wineList');
+bioFormSubmit.addEventListener('submit', handleUserBio);
 
 var bioFormSubmit = document.getElementById('bio');
 bioFormSubmit.addEventListener('submit', handleUserBio);

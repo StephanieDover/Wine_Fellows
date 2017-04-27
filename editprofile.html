@@ -18,7 +18,17 @@
         <a href="index.html"> Logout </a> <!--localStorage.removeItem(currentUser); on logout-->
       </li>
       <li>
+        <div class="app">
+        </div>
         <img src="./imgs/van-pic.png" class="profile-pic" />
+        <div id="top-left">
+          <img name="profilePic" id="profile-pic" alt="Profile picture">
+          <form id="set-profile">
+            <input name="imageURL" type="text" id="pictureLocation" placeholder='Submit a URL to your photo!'/>
+            <br>
+            <input type="submit" value="Save changes" />
+          </form>
+        </div>
       </li>
     </ul>
   </nav>
@@ -33,9 +43,7 @@
     <button type="submit"> Change Wines! </button>
   </form>
 
-  <div class="app">
 
-</div>
 <form id="wineList">
   <h4>Favorite Wine Color</h4>
   <p>Red</p><input id='red' name="colorPreference" type="checkbox" placeholder="Wine color preference" value="red"/></br>
