@@ -1,4 +1,3 @@
-
 'use strict';
 
 //start of update fav lists handler

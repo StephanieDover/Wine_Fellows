@@ -8,6 +8,7 @@
   "globals": {
     "users": true,
     "userId": true,
+    "userProfileIndex": true,
     "currentUserIndex": true
   },
   "env": {
