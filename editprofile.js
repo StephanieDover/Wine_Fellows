@@ -133,6 +133,11 @@ function profilePic() {
 }
 profilePic();
 
+function logoutHandler() {
+  localStorage.removeItem(currentUserIndex);
+  window.location.replace('index.html')
+}
+
 checkBoxGenerator(wines, 'Whats your favorite wine color?', 'favwine');
 checkBoxGenerator(wineList, 'What kinds of wines do you like to drink?', 'wineTypes');
 checkBoxGenerator(wineries, 'What are your favorites wineries?');
@@ -148,3 +153,6 @@ reviewSubmit.addEventListener('submit', handleSubmitReview);
 
 var updateFavsSubmit = document.getElementById('boolean-questions');
 updateFavsSubmit.addEventListener('submit', favsUpdateHandleSubmit);
+
+var logout = document.getElementById('logout');
+logout.addEventListener('submit', logoutHandler);
