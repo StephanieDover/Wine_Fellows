@@ -1,5 +1,4 @@
 *{
-  width: 100%;
   margin: 0;
   padding: 0;
   box-sizing: content-box;
@@ -15,12 +14,11 @@ form {
   heigt:600px;
 }
 input {
-  float: right;
   display: inline;
 }
-p {
+/*p {
   display: inline;
-}
+}*/
 
 nav li {
   margin-left: 10px;
