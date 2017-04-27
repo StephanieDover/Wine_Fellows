@@ -28,7 +28,7 @@ function User (profilePic, first, last, userName, wineColor, favWine, favWinery)
   this.profilePic = profilePic;
   this.reviews = [];
   this.comments = [];
-  users.push(user);
+  // users.push(User);
 }
 
 function Comment(userName, comment, date) {
@@ -36,3 +36,13 @@ function Comment(userName, comment, date) {
   this.comment = comment;
   this.date = date;
 }
+
+var testUser = new User('www.google.com', 'Michael', 'Axelsosd', 'Maxelson', 'red', 'st.michelles');
+users.push(testUser);
+
+// try {
+//   localStorage.setItem ('users', JSON.stringify(users));
+// }
+// catch (error) {
+//   console.log('something went wrong', error);
+// }
