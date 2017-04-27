@@ -12,7 +12,7 @@ catch (error) {
 }
 
 try {
-    currentUserIndex = JSON.parse(currentUserIndex)
+  currentUserIndex = JSON.parse(localStorage.currentUserIndex);
 }
 catch (error) {
   console.log('something went wrong', error);
@@ -33,9 +33,6 @@ function User (profilePic, first, last, userName) {
   this.profilePic = profilePic;
   this.reviews = [];
   this.comments = [];
-
-  users.push(this);
-
 }
 
 function Comment(userName, comment, date) {
@@ -43,13 +40,3 @@ function Comment(userName, comment, date) {
   this.comment = comment;
   this.date = date;
 }
-
-var testUser = new User('www.google.com', 'Michael', 'Axelsosd', 'Maxelson', 'red', 'st.michelles');
-users.push(testUser);
-
-// try {
-//   localStorage.setItem ('users', JSON.stringify(users));
-// }
-// catch (error) {
-//   console.log('something went wrong', error);
-// }

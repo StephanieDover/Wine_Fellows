@@ -1,4 +1,4 @@
-'use strict';
+  'use strict';
 
 var wines = ['red','white'];
 var wineList = ['cab','merlot','malbec'];
@@ -64,7 +64,6 @@ function signUpHandleSubmit(event) {
   var profilePic= form.profilePic.value;
   // profilePic, first, last, userName, wineColor, favWine, favWinery
   var user = new User(profilePic, firstName, lastName, userName);
-  // var user = {}
 
   var checkbox;
   for (var i = 0; i <wines.length; i++) {
@@ -97,7 +96,7 @@ function signUpHandleSubmit(event) {
   }
 
   currentUserIndex = users.length - 1 ;
-
+  console.log( 'index', currentUserIndex);
   try {
     localStorage.currentUserIndex = JSON.stringify(currentUserIndex);
   } catch (error){
