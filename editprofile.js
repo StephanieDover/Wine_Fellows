@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 function handleSubmitReview (event) {
 
   event.preventDefault();
@@ -77,13 +75,12 @@ function profilePic() {
 }
 profilePic();
 
+checkBoxGenerator(wines, 'Whats your favorite wine color?', 'favwine');
+checkBoxGenerator(wineList, 'What kinds of wines do you like to drink?', 'wineTypes');
+checkBoxGenerator(wineries, 'What are your favorites wineries?');
+
 var setProfile = document.getElementById('set-profile');
 setProfile.addEventListener('submit', profilePicSubmitHandler);
-
-var bioFormSubmit = document.getElementById('wineList');
-bioFormSubmit.addEventListener('submit', handleUserBio);
-
-
 
 var bioFormSubmit = document.getElementById('bio');
 bioFormSubmit.addEventListener('submit', handleUserBio);

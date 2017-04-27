@@ -2,6 +2,9 @@
 
 var currentUserIndex;
 var users = [];
+var wines = ['red','white'];
+var wineList = ['cab','merlot','malbec'];
+var wineries = ['st.michelles','whatever winery'];
 
 try {
   users = JSON.parse(localStorage.users);
@@ -39,4 +42,27 @@ function Comment(userName, comment, date) {
   this.userName = userName;
   this.comment = comment;
   this.date = date;
+}
+
+function checkBoxGenerator(list, listQuestion, questionName) {
+  var form = document.getElementById('boolean-questions');
+  var header = document.createElement('h3');
+  header.textContent = listQuestion;
+  form.appendChild(header);
+  var ul = document.createElement('ul');
+  ul.setAttribute('class', 'question');
+  form.appendChild(ul);
+  for (var i = 0; i < list.length; i++) {
+    var li = document.createElement('li');
+    var checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
+    checkbox.setAttribute('name', list[i]);
+    checkbox.setAttribute('id', list[i]);
+    var label = document.createElement('label');
+    label.setAttribute('for', questionName);
+    label.textContent = list[i];
+    ul.appendChild(li);
+    li.appendChild(checkbox);
+    li.appendChild(label);
+  }
 }
