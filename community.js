@@ -7,6 +7,7 @@ function generateUsers() {
 
   for(var i = 0; i < users.length; i++) {
     var userBox = document.createElement('div');
+    userBox.setAttribute('users-on-screen-index', i);
     var name = document.createElement('h1')
     name.textContent = users[i].first;
     userBox.appendChild(name);
@@ -21,3 +22,7 @@ function generateUsers() {
   }
 }
 generateUsers();
+
+function handlePhotoClick() {
+
+}
