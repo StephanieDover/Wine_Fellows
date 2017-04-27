@@ -1,6 +1,7 @@
 'use strict';
 
 var currentUserIndex;
+var userProfileIndex;
 var users = [];
 var wines = ['red','white'];
 var wineList = ['cab','merlot','malbec'];
@@ -20,9 +21,6 @@ try {
 catch (error) {
   console.log('something went wrong', error);
 }
-
-
-
 
 function User (profilePic, first, last, userName) {
   this.first= first;

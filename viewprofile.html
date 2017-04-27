@@ -22,17 +22,18 @@
   <div id="app">
     <section id="about-user">
       <img id="view-user-profile-pic">Pic</img>
-      <section id="view-user-name">name</section>
+      <p id="view-user-name">name</p>
       <section id="view-user-bio">bio</section>
       <section id="view-user-favs">favs</section>
       <section id="view-user-reviews">reviews</section>
     </section>
     <main id="view-user-comment-section">
-      <form name="visiterComments">
+      <form name="visitorComments" id="comments">
+        <textarea name="commentText" id="comment-text"></textarea>
+        <button id="comment-submit">+ comment</button>
       </form>
-      <section id="visiter-comments">
+      <section id="visitor-comments">
       </section>
-      <time id="time">time</time>
     </main>
   </div>
   <script src="main.js"> </script>
