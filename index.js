@@ -30,11 +30,8 @@ function handleLoginSubmit(event) {
 
 
 var wines = ['red','white'];
-
 var wineList = ['cab','merlot','malbec'];
-
 var wineries = ['st.michelles','whatever winery'];
-
 var favoriteLocal = ['woodinville','columbia valley'];
 
 function checkBoxGenerator(list, listQuestion, questionName) {
@@ -43,13 +40,13 @@ function checkBoxGenerator(list, listQuestion, questionName) {
   header.textContent = listQuestion;
   form.appendChild(header);
   var ul = document.createElement('ul');
-  ul.setAttribute('id', 'question');
+  ul.setAttribute('class', 'question');
   form.appendChild(ul);
   for (var i = 0; i < list.length; i++) {
     var li = document.createElement('li');
     var checkbox = document.createElement('input');
     checkbox.setAttribute('type', 'checkbox');
-    checkbox.setAttribute('name', questionName);
+    checkbox.setAttribute('name', list[i]);
     checkbox.setAttribute('id', list[i]);
     var label = document.createElement('label');
     label.setAttribute('for', questionName);
@@ -58,7 +55,6 @@ function checkBoxGenerator(list, listQuestion, questionName) {
     li.appendChild(checkbox);
     li.appendChild(label);
   }
-
 }
 
 
@@ -67,57 +63,74 @@ function checkBoxGenerator(list, listQuestion, questionName) {
 checkBoxGenerator(wines, 'Whats your favorite wine color?', 'favwine');
 checkBoxGenerator(wineList, 'What kinds of wines do you like to drink?', 'wineTypes');
 checkBoxGenerator(favoriteLocal, 'What are your favorite wineries??', 'favWineries');
+// var inputs = document.getElementById('favwine').getElementsByTagName('input');
+// console.log(inputs.length);
+//
+// var inputs = document.getElementsByClassName('checkBox');
+// console.log (inputs.checked);
+//
+// var stuff = document.getElementsByClassName('question').getElementsByTagName('input');
+//
+// console.log(stuff);
+//
+//  //.getElementsByTagName('input');
+// console.log(checkedBox);
+//
+// // console.log(inputs.length);
+//
+// function questionLooper() {
+//   var questions = document.getElementsByClassName('questions');
+// }
 
 
-var question = 'question'
-var inputs = document.getElementById(question).getElementsByTagName('input');
-console.log(inputs.length);
+// function experimentalUserGenerator(event) {
+//   event.preventDefault();
+//   var form = event.target;
+//   var questions =document.getElementsByClassName('questions');
+//   for(var i=0; i<questions.length; i++) {
+//     questions[i].getElements
+// }
+//   for (var i = 0; i<)
+//   var generatedUser = new User(profilePic, first, last, userName, wineColor, favWine, favWinery);
+//
+// }
 
 
-
-function experimentalUserGenerator(event) {
-  event.preventDefault();
-  var form = event.target;
-
-  var generatedUser = new User(profilePic, first, last, userName, wineColor, favWine, favWinery);
-}
-
-
-function handleUserGenerator (event){
-  event.preventDefault();
-  var form = event.target;
-
-  var generatedUser = new User(userGeneratorProfilePic, userGeneratorFirstName, userGeneratorLastName, userGeneratorUserName, userGeneratorFavWine, userGeneratorFavWinery);
-
-  var userGeneratorFirstName = form.firstName.value;
-  var userGeneratorLastName = form.lastName.value;
-  var userGeneratorUserName = form.userName.value;
-  var inputs = document.getElementById(questionName).getElementsByTagName('input');
-
-  for (var i=0; i<users.length; ) {
-
-  if (input[i].checked)
-  var userGeneratorFavWine = form.favWine.checked;
-  var userGeneratorFavWinery = form.favWinery.checked;
-  var userGeneratorProfilePic = form.profilePic.value;
-  var userGeneratorWineColor = form.wineColor.value;
-
-
-  users.push(generatedUser);
-  console.log(generatedUser);
-  // profileReDirect('editprofile.html');
-  profileReDirect();
-  form.reset();
-
-  try {
-    localStorage.users = JSON.stringify(users);
-    console.log('users', users);
-  }
-  catch (error) {
-    console.log('something went wrong', error);
-    }
-  }
-}
+// function handleUserGenerator (event){
+//   event.preventDefault();
+//   var form = event.target;
+//
+//   var generatedUser = new User(userGeneratorProfilePic, userGeneratorFirstName, userGeneratorLastName, userGeneratorUserName, userGeneratorFavWine, userGeneratorFavWinery);
+//
+//   var userGeneratorFirstName = form.firstName.value;
+//   var userGeneratorLastName = form.lastName.value;
+//   var userGeneratorUserName = form.userName.value;
+//   var inputs = document.getElementById(questionName).getElementsByTagName('input');
+//
+//   for (var i=0; i<users.length; ) {
+//
+//   if (input[i].checked)
+//   var userGeneratorFavWine = form.favWine.checked;
+//   var userGeneratorFavWinery = form.favWinery.checked;
+//   var userGeneratorProfilePic = form.profilePic.value;
+//   var userGeneratorWineColor = form.wineColor.value;
+//
+//
+//   users.push(generatedUser);
+//   console.log(generatedUser);
+//   // profileReDirect('editprofile.html');
+//   profileReDirect();
+//   form.reset();
+//
+//   try {
+//     localStorage.users = JSON.stringify(users);
+//     console.log('users', users);
+//   }
+//   catch (error) {
+//     console.log('something went wrong', error);
+//     }
+//   }
+// }
 
 // loadUserData();
 
