@@ -11,16 +11,30 @@ function profilePic() {
   var image = document.getElementById('view-user-profile-pic');
   image.src = users[userProfileIndex].profilePic;
 }
-profilePic();
+
 
 function profileName() {
-
+  var viewProfileName = document.getElementById('view-user-name');
+  viewProfileName.textContent = users[userProfileIndex].name;
 }
+
+function populateBio(){
+  var bioUpdate = document.getElementById('usersBio');
+  var text = document.createTextNode(users[userProfileIndex].bio);
+  var list = document.createElement('li');
+  bioUpdate.appendChild(list);
+  list.appendChild(text);
+}
+
 
 function logoutHandler() {
   localStorage.removeItem(currentUserIndex);
-  window.location.replace('index.html')
+  window.location.replace('index.html');
 }
+
+profilePic();
+profileName();
+populateBio();
 
 var logout = document.getElementById('logout');
 logout.addEventListener('submit', logoutHandler);
