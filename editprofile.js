@@ -89,7 +89,6 @@ function testUserConstructor(profilePic, reviews, userName) {
   this.reviews= [];
   this.userName= userName;
 }
-
 var testUser = new testUserConstructor('www.google.com', ['suh','dude'], 'mike');
 
 users.push(testUser);
@@ -100,6 +99,7 @@ setProfile.addEventListener('submit', profilePicSubmitHandler);
 var bioFormSubmit = document.getElementById('wineList');
 bioFormSubmit.addEventListener('submit', handleUserBio);
 
+  
 var bioFormSubmit = document.getElementById('bio');
 bioFormSubmit.addEventListener('submit', handleUserBio);
 
