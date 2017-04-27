@@ -68,6 +68,7 @@ function profilePicSubmitHandler(event){
   catch (error) {
     console.log('something went wrong', error);
   }
+  profilePic();
 }
 function profilePic() {
   var image = document.getElementById('profile-pic');
