@@ -1,5 +1,10 @@
 'use strict';
-
+currentUser = 0;
+console.log('lulwat', users);
+if (users[currentUser].profilePic){
+  var profilePic = document.getElementById('profile-pic');
+  profilePic.src = users[currentUser].profilePic;
+}
 function handleUserBio (event){
   event.preventDefault();
   usersBio.textContent = '';
@@ -62,22 +67,8 @@ populateWineReview();
 
 
 populateBio();
-
-function getProfilePic(img) {
-  var canvas = document.createElement('profilePic');
-  canvas.width = img.width;
-  canvas.height = img.height;
-
-  var ctx = canvas.getContext('');
-  ctx.drawImage(img, 0, 0);
-
-  var dataURL = canvas.toDataURL('imageURL');
-
-  return dataURL.replace(/^data:image\/(png|jpg);profilePic,/, '');
-}
-getProfilePic();
-
 function profilePicSubmitHandler(event){
+
   event.preventDefault();
   var form = event.target;
   console.log(event.target);
@@ -86,10 +77,11 @@ function profilePicSubmitHandler(event){
   image.src = users[currentUser].profilePic;
   users[currentUser].profilePic = imageURL;
   try {
-    localStorage.users[currentUser].profilePic = JSON.stringify(users);
+    localStorage.users = JSON.stringify(users);
+    console.log('users', users);
   }
   catch (error) {
-    console.log('failed to save bio update');
+    console.log('something went wrong', error);
   }
 }
 function testUserConstructor(profilePic, reviews, userName) {
@@ -102,31 +94,11 @@ var testUser = new testUserConstructor('www.google.com', ['suh','dude'], 'mike')
 
 users.push(testUser);
 
-try {
-  localStorage.users = JSON.stringify(users);
-  console.log('users', users);
-}
-catch (error) {
-  console.log('something went wrong', error);
-}
-
-
 var setProfile = document.getElementById('set-profile');
 setProfile.addEventListener('submit', profilePicSubmitHandler);
 
 var bioFormSubmit = document.getElementById('wineList');
 bioFormSubmit.addEventListener('submit', handleUserBio);
-
-//users[currentUser];
-  // var lastName = setAttribute;
-  // var UserName = getElementById('');
-  // var userGeneratorLastName = lastName.value;
-  // var userGeneratorUserName = userName.value;
-  // var userGeneratorFavWine = favWine.value;
-  // var userGeneratorFavWinery = favWinery.value;
-  // var userGeneratorColorPreference = colorPreference.value;
-  //
-  // console.log(currentUser);
 
 var bioFormSubmit = document.getElementById('bio');
 bioFormSubmit.addEventListener('submit', handleUserBio);
