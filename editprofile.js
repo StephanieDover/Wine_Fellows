@@ -1,7 +1,9 @@
 'use strict';
 
 
+
 function handleSubmitReview (event) {
+
   event.preventDefault();
   var form = event.target;
   var reviewUpdate = form.userWineReview.value;
@@ -56,6 +58,34 @@ function populateBio(){
   list.appendChild(text);
 }
 populateBio();
+function profilePicSubmitHandler(event){
+
+
+  event.preventDefault();
+  var form = event.target;
+  console.log(event.target);
+  var imageURL = form.imageURL.value;
+  var image = document.getElementById('profile-pic');
+  image.src = users[currentUser].profilePic;
+  users[currentUser].profilePic = imageURL;
+  try {
+    localStorage.users = JSON.stringify(users);
+    console.log('users', users);
+  }
+  catch (error) {
+    console.log('something went wrong', error);
+  }
+}
+
+
+
+var setProfile = document.getElementById('set-profile');
+setProfile.addEventListener('submit', profilePicSubmitHandler);
+
+var bioFormSubmit = document.getElementById('wineList');
+bioFormSubmit.addEventListener('submit', handleUserBio);
+
+  
 
 var bioFormSubmit = document.getElementById('bio');
 bioFormSubmit.addEventListener('submit', handleUserBio);
