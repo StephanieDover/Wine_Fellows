@@ -1,5 +1,62 @@
+
 'use strict';
 
+//start of update fav lists handler
+function favsUpdateHandleSubmit(event) {
+  console.log('yeah so this part works');
+  event.preventDefault();
+  var form = event.target;
+  var checkbox;
+  for (var i = 0; i <wines.length; i++) {
+    checkbox = form[wines[i]];
+    console.log(checkbox.id);
+    if ((checkbox.id != users[currentUserIndex].wineColors[i]) && checkbox.checked) {
+      checkbox = form[wines[i]];
+      users[currentUserIndex].wineColors.push(checkbox.id)
+      console.log(checkbox.id);
+    } else {
+      if (checkbox.checked) {
+        console.log('wont work');
+      }
+    }
+  }
+
+  for (i = 0; i< wineList.length; i++){
+    checkbox = form[wineList[i]];
+    console.log(checkbox.id);
+    if ((checkbox.id != users[currentUserIndex].favWines[i]) && checkbox.checked) {
+      checkbox = form[wineList[i]];
+      users[currentUserIndex].favWines.push(checkbox.id)
+      console.log(checkbox.id);
+    } else {
+      if (checkbox.checked) {
+        console.log('wont work');
+      }
+    }
+  }
+
+  for (i = 0; i< wineries.length; i++){
+    checkbox = form[wineries[i]];
+    if ((checkbox.id != users[currentUserIndex].favWineries[i]) && checkbox.checked) {
+      checkbox = form[wineries[i]];
+      users[currentUserIndex].favWineries.push(checkbox.id)
+      console.log(checkbox.id);
+    } else {
+      if (checkbox.checked) {
+        console.log('wont work');
+      }
+
+  }
+}
+
+  try {
+    localStorage.users = JSON.stringify(users);
+  } catch (error){
+    console.log('failed to save updated list');
+
+  }
+}
+//end update favs lists handler
 function handleSubmitReview (event) {
 
   event.preventDefault();
@@ -14,15 +71,15 @@ function handleSubmitReview (event) {
   section.appendChild(pTag);
   pTag.textContent = (reviewUpdate);
 
-    users[currentUserIndex].reviews.push(reviewUpdate);
-  }
-  try {
-    localStorage.users = JSON.stringify(users);
-    console.log('users', users);
-  }
-  catch (error) {
-    console.log('something went wrong', error);
-  }
+  users[currentUserIndex].reviews.push(reviewUpdate);
+}
+try {
+  localStorage.users = JSON.stringify(users);
+  console.log('users', users);
+}
+catch (error) {
+  console.log('something went wrong', error);
+}
 
 //
 function handleUserBio (event){
@@ -88,3 +145,6 @@ bioFormSubmit.addEventListener('submit', handleUserBio);
 
 var reviewSubmit = document.getElementById('myReview');
 reviewSubmit.addEventListener('submit', handleSubmitReview);
+
+var updateFavsSubmit = document.getElementById('boolean-questions');
+updateFavsSubmit.addEventListener('submit', favsUpdateHandleSubmit);
