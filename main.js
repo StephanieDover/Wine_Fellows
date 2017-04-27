@@ -21,6 +21,12 @@ try {
 catch (error) {
   console.log('something went wrong', error);
 }
+try {
+  userProfileIndex = JSON.parse(localStorage.userProfileIndex);
+}
+catch (error) {
+  console.log('something is wrong with grabbing userProfileIndex', error);
+}
 
 function User (profilePic, first, last, userName) {
   this.first= first;
