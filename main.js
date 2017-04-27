@@ -1,6 +1,7 @@
 'use strict';
 
 var currentUserIndex;
+var userProfileIndex;
 var users = [];
 var wines = ['red','white'];
 var wineList = ['cab','merlot','malbec'];
