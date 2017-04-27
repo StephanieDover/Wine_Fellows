@@ -22,8 +22,6 @@ catch (error) {
 }
 
 
-
-
 function User (profilePic, first, last, userName) {
   this.first= first;
   this.last= last;
@@ -64,5 +62,6 @@ function checkBoxGenerator(list, listQuestion, questionName) {
     ul.appendChild(li);
     li.appendChild(checkbox);
     li.appendChild(label);
+
   }
 }
