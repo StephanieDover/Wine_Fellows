@@ -8,7 +8,7 @@
   "globals": {
     "users": true,
     "userId": true,
-    "currentUser": true
+    "currentUserIndex": true
   },
   "env": {
     "es6": true,

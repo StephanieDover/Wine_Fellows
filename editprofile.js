@@ -16,8 +16,7 @@ function handleSubmitReview (event) {
   section.appendChild(pTag);
   pTag.textContent = (reviewUpdate);
 
-  if (currentUser) {
-    currentUser.reviews.push(reviewUpdate);
+    users[currentUserIndex].reviews.push(reviewUpdate);
   }
   try {
     localStorage.users = JSON.stringify(users);
@@ -26,10 +25,6 @@ function handleSubmitReview (event) {
   catch (error) {
     console.log('something went wrong', error);
   }
-}
-
-
-
 
 //
 function handleUserBio (event){
@@ -38,7 +33,7 @@ function handleUserBio (event){
   var form = event.target;
   var userBioUpdate = form.userBio.value;
   console.log(userBioUpdate);
-  currentUser.bio = userBioUpdate;
+  users[currentUserIndex].bio = userBioUpdate;
   form.reset();
   populateBio();
   try {
@@ -52,22 +47,22 @@ function handleUserBio (event){
 }
 function populateBio(){
   var bioUpdate = document.getElementById('usersBio');
-  var text = document.createTextNode(currentUser.bio);
+  var text = document.createTextNode(users[currentUserIndex].bio);
   var list = document.createElement('li');
   bioUpdate.appendChild(list);
   list.appendChild(text);
 }
 populateBio();
-function profilePicSubmitHandler(event){
 
+function profilePicSubmitHandler(event){
 
   event.preventDefault();
   var form = event.target;
   console.log(event.target);
   var imageURL = form.imageURL.value;
   var image = document.getElementById('profile-pic');
-  image.src = users[currentUser].profilePic;
-  users[currentUser].profilePic = imageURL;
+  image.src = users[currentUserIndex].profilePic;
+  users[currentUserIndex].profilePic = imageURL;
   try {
     localStorage.users = JSON.stringify(users);
     console.log('users', users);
@@ -76,8 +71,11 @@ function profilePicSubmitHandler(event){
     console.log('something went wrong', error);
   }
 }
-
-
+function profilePic() {
+  var image = document.getElementById('profile-pic');
+  image.src = users[currentUserIndex].profilePic;
+}
+profilePic();
 
 var setProfile = document.getElementById('set-profile');
 setProfile.addEventListener('submit', profilePicSubmitHandler);
@@ -85,7 +83,7 @@ setProfile.addEventListener('submit', profilePicSubmitHandler);
 var bioFormSubmit = document.getElementById('wineList');
 bioFormSubmit.addEventListener('submit', handleUserBio);
 
-  
+
 
 var bioFormSubmit = document.getElementById('bio');
 bioFormSubmit.addEventListener('submit', handleUserBio);
