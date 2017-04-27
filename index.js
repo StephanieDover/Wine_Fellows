@@ -4,7 +4,6 @@ var wines = ['red','white'];
 var wineList = ['cab','merlot','malbec'];
 var wineries = ['st.michelles','whatever winery'];
 
-
 function handleLoginSubmit(event) {
   event.preventDefault();
   var form = event.target;
@@ -15,15 +14,16 @@ function handleLoginSubmit(event) {
     if (userNameEntry === users[i].userName) {
       // window.location = '#';
       userFound = true;
-      currentUser = i;
+      currentUserIndex = i;
+
       try {
-        localStorage.currentUser = JSON.stringify(currentUser);
+        localStorage.currentUserIndex = JSON.stringify(currentUserIndex);
         console.log('users', users);
       }
       catch (error) {
         console.log('current user index not saved');
       }
-      console.log(currentUser);
+      console.log(currentUserIndex);
     } else {
       form.login.placeholder = 'User not found!!!';
       console.log('user not found!');
@@ -33,7 +33,7 @@ function handleLoginSubmit(event) {
 }
 
 function checkBoxGenerator(list, listQuestion, questionName) {
-  var form = document.getElementById('createUser');
+  var form = document.getElementById('boolean-questions');
   var header = document.createElement('h3');
   header.textContent = listQuestion;
   form.appendChild(header);
@@ -87,18 +87,23 @@ function signUpHandleSubmit(event) {
       user.favWineries.push(checkbox.id)
     }
   }
-  currentUser = user;
-  try {
-    localStorage.currentUser = JSON.stringify(currentUser);
-  } catch (error){
-    console.log(error);
-  }
-  users.push(currentUser);
+
+
+  users.push(user);
   try {
     localStorage.users = JSON.stringify(users);
   } catch (error){
     console.log(error);
   }
+
+  currentUserIndex = users.length - 1 ;
+
+  try {
+    localStorage.currentUserIndex = JSON.stringify(currentUserIndex);
+  } catch (error){
+    console.log(error);
+  }
+
   profileReDirect();
 }
 

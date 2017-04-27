@@ -1,20 +1,25 @@
 'use strict';
 
-var currentUser;
+var currentUserIndex;
 var users = [];
 
 try {
   users = JSON.parse(localStorage.users);
+
 }
 catch (error) {
   console.log('something went wrong', error);
 }
+
 try {
-  currentUser = JSON.parse(localStorage.currentUser);
+    currentUserIndex = JSON.parse(currentUserIndex)
 }
 catch (error) {
-  console.log('current user not returned');
+  console.log('something went wrong', error);
 }
+
+
+
 
 function User (profilePic, first, last, userName) {
   this.first= first;
