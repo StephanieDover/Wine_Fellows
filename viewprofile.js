@@ -39,14 +39,16 @@ function profileFavs(title, userArray) {
 }
 
 function profileReview(){
-  var section = document.getElementById('view-user-reviews');
+  for (var i = 0; i <= users[userProfileIndex].reviews.length; i++) {
+    var section = document.getElementById('view-user-reviews');
   var list = document.createElement('ul');
   var listItem = document.createElement('li');
-  section.appendChild(list);
-  for (var i = 0; i < users[userProfileIndex].reviews.length; i++)
-  list.appendChild(listItem);
   listItem.textContent =
-   (users[userProfileIndex].reviews[i]);
+  (users[userProfileIndex].reviews[i]);
+  console.log(users[userProfileIndex].reviews[i])
+  section.appendChild(list);
+  list.appendChild(listItem);
+}
 }
 
 function commentsHandler(event) {
@@ -95,6 +97,7 @@ function logoutHandler() {
 }
 
 commentGenerator();
+profileReview();
 profilePic();
 profileName();
 profileBio();
