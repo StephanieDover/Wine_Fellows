@@ -19,6 +19,7 @@ body {
   color: white;
   font-size: 5em;
   text-align: center;
+  text-shadow: 5px 5px 5px #010000;
 }
 
 li {
@@ -40,6 +41,7 @@ li {
 }
 
 #formLogin{
+  margin: 2%;
   margin-left: 25%;
 }
 
@@ -49,19 +51,21 @@ li {
   margin: 0 auto;
   background-color: white;
   padding: 0.5% 5%;
-
-
 }
-
+.box-shadow {
+  box-shadow: 1px 1px 1px 1px #696969;
+  margin: 5px;
+}
 #createUser{
   margin-left: 12%;
-  margin-bottom: 5%;
+  margin: 5%;
 }
 
 .sign-up-submit{
   width: 100%;
   height: auto;
   margin: 0 auto;
+  margin-bottom: 5%;
 }
 
 .community-boxes img{
