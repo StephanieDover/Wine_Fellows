@@ -5,6 +5,32 @@
   margin: 0;
   padding: 0;
   box-sizing: content-box;
+
+}
+body {
+  background-image:  linear-gradient(127deg,#C24D44 -35%,#c643cb 130%);
+
+}
+.community-boxes img{
+  width: 200px;
+  height: 200px;
+  border-radius: 15%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.test-boxes {
+  display: inline-block;
+  width: calc(100%/5);
+  height: auto;
+  background-color: beige;
+  border-radius: 10%;
+  margin: 10px;
+
+}
+.community-boxes {
+  display: inline;
+
 }
 
 

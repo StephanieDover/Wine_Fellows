@@ -12,8 +12,9 @@ function generateUsers() {
   for(var i = 0; i < users.length; i++) {
     var userBox = document.createElement('div');
     userBox.setAttribute('users-on-screen-index', i);
+    userBox.setAttribute('class', 'test-boxes');
     userBox.addEventListener('click', handleUserBoxClick);
-    var name = document.createElement('h1')
+    var name = document.createElement('h1');
     name.setAttribute('users-on-screen-index', i);
     name.textContent = users[i].first;
     userBox.appendChild(name);
