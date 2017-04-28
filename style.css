@@ -30,12 +30,12 @@ nav li {
   margin-left: 15%;
 }
 nav a {
-text-decoration: none;
-font-size: 1.25em;
-color: white;
-font-family: 'Arimo', sans-serif;
-font-weight: lighter;
-text-align: center;
+  text-decoration: none;
+  font-size: 1.25em;
+  color: white;
+  font-family: 'Arimo', sans-serif;
+  font-weight: lighter;
+  text-align: center;
 }
 .logo{
   width: 50px;
@@ -88,28 +88,6 @@ li {
   height: auto;
   margin: 0 auto;
   margin-bottom: 5%;
-}
-
-.community-boxes img{
-  width: 200px;
-  height: 200px;
-  border-radius: 15%;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  text-align: center;
-}
-.test-boxes {
-  display: inline-block;
-  width: calc(100%/5);
-  height: auto;
-  background-color: white;
-  border-radius: 10%;
-  margin: 10px;
-
-}
-.community-boxes {
-  display: inline;
-
 }
 
 #profile-pic {
@@ -212,4 +190,34 @@ input {
 }
 #reviewBox {
   text-align: center;
+}
+/*start of styling for community page*/
+.community-boxes img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  margin-top: 5%;
+  border:1px solid #010000;
+}
+.test-boxes {
+  display: inline-block;
+  width: 28%;
+  height: auto;
+  background-color: white;
+  margin: 2%;
+  text-align: center;
+  box-shadow: 1px 1px 1px 1px #010000;
+}
+.community-boxes {
+  display: inline;
+}
+#communityMain h1 {
+  font-family: 'Arimo', sans-serif;
+  font-size: 1.5em;
+}
+#communityMain h4 {
+  font-family: 'Arimo', sans-serif;
+  font-size: 1em;
+  text-decoration: underline;
 }
