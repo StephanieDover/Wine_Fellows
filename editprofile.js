@@ -170,7 +170,7 @@ function updateUserWineInfoHandler(event) {
   var form = event.target;
   users[currentUserIndex].wineColors = [];
   users[currentUserIndex].favWines = [];
-  users[currentUserIndex].wineries = [];
+  users[currentUserIndex].favWineries = [];
   // wineColor, favWine, favWinery
 
   var checkbox;
