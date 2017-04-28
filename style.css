@@ -54,7 +54,8 @@ li {
 }
 .box-shadow {
   box-shadow: 1px 1px 1px 1px #696969;
-  margin: 5px;
+  margin: 0 auto;
+  margin: 5%;
 }
 #createUser{
   margin-left: 12%;
@@ -80,7 +81,7 @@ li {
   display: inline-block;
   width: calc(100%/5);
   height: auto;
-  background-color: beige;
+  background-color: white;
   border-radius: 10%;
   margin: 10px;
 
@@ -125,4 +126,23 @@ nav li {
 #comment-button {
   height: 100px;
   width: 200px;
+}
+/*start css for edit profile page*/
+
+#top-left {
+  width: 33%;
+  height: 300px;
+  background-color: white;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1%;
+}
+#profile-pic {
+  margin-top: 2%;
+}
+#pictureLocation {
+  margin-top: 5%;
+}
+#pic-submit {
+  margin-bottom: 5%;
 }

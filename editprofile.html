@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Edit Profile </title>
+  <title> Wine Fellows </title>
   <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-<div class="app">
   <nav id="headerBar" class="header-bar">
     <ul>
       <li>
@@ -18,23 +17,25 @@
         <a href="index.html" id="logout"> Logout </a>
       </li>
       </ul>
+    </nav>
+      <h1 class="title-two">Wine Fellows </h1>
         <div class="app">
-        </div>
         <div id="top-left">
+          <div class='box-shadow'>
           <img name="profilePic" id="profile-pic" alt="Profile picture">
           <form id="set-profile">
             <input name="imageURL" type="text" id="pictureLocation" placeholder='Submit a URL to your photo!'/>
             <br>
-            <input type="submit" value="Save changes" />
+            <input id='pic-submit' type="submit" value="Save changes" />
           </form>
         </div>
-
-  </nav>
+        </div>
+<div id="bottom-left">
   <form id="update-wine-info">
     <div id="boolean-answers"></div>
     <button>Update Your Wine Info!!!</button>
   </form>
-
+</div>
 
   <div id="display-Favorites">
   </div>
@@ -53,6 +54,7 @@
 <ul id="reviewBox">
 
 </ul>
+</div>
 
 <script src="main.js"> </script>
 <script scr ="index.js"></script>
