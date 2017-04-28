@@ -138,9 +138,84 @@ function logoutHandler() {
   window.location.replace('index.html')
 }
 
-checkBoxGenerator(wines, 'Whats your favorite wine color?', 'favwine');
-checkBoxGenerator(wineList, 'What kinds of wines do you like to drink?', 'wineTypes');
-checkBoxGenerator(wineries, 'What are your favorites wineries?');
+
+function clickRememberer(list, answers, questionName,userArray) {
+  var form = document.getElementById('boolean-answers');
+  var header = document.createElement('h3');
+  header.textContent = answers;
+  form.appendChild(header);
+  var ul = document.createElement('ul');
+  ul.setAttribute('class', 'question');
+  form.appendChild(ul);
+  for (var i = 0; i < list.length; i++) {
+    var li = document.createElement('li');
+    var checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
+    checkbox.setAttribute('name', list[i]);
+    checkbox.setAttribute('id', list[i]);
+    var label = document.createElement('label');
+    label.setAttribute('for', questionName);
+    label.textContent = list[i];
+    ul.appendChild(li);
+    li.appendChild(checkbox);
+    li.appendChild(label);
+    if (list[i]===userArray[i]) {
+      checkbox.checked =true ;
+    }
+  }
+}
+
+function updateUserWineInfoHandler(event) {
+  event.preventDefault();
+  var form = event.target;
+  users[currentUserIndex].wineColors = [];
+  users[currentUserIndex].favWines = [];
+  users[currentUserIndex].wineries = [];
+  // wineColor, favWine, favWinery
+
+  var checkbox;
+  for (var i = 0; i <wines.length; i++) {
+    checkbox = form[wines[i]];
+    if (checkbox.checked) {
+      users[currentUserIndex].wineColors.push(checkbox.id)
+    }
+  }
+
+  for (i = 0; i< wineList.length; i++){
+    checkbox = form[wineList[i]];
+    if (checkbox.checked) {
+      users[currentUserIndex].favWines.push(checkbox.id)
+    }
+  }
+  for (i = 0; i< wineries.length; i++){
+    checkbox = form[wineries[i]];
+    if (checkbox.checked) {
+      users[currentUserIndex].favWineries.push(checkbox.id)
+    }
+  }
+  try {
+    localStorage.users = JSON.stringify(users);
+    console.log('users', users);
+  }
+  catch (error) {
+    console.log('something went wrong', error);
+  }
+}
+
+
+
+clickRememberer(wines, 'Choose your wine!', 'suh dude', users[currentUserIndex].wineColors);
+clickRememberer(wineList, 'These are your favorite wines!', 'suh dude', users[currentUserIndex].favWines);
+clickRememberer(wineries, 'Wine Spots?!??!?!', 'suh dude', users[currentUserIndex].favWineries);
+
+
+
+// clickRememberer(users[currentUserIndex].favWine);
+// console.log(users[currentUserIndex].favWine);
+
+
+var updateUserWineInfo = document.getElementById('update-wine-info');
+updateUserWineInfo.addEventListener('submit', updateUserWineInfoHandler);
 
 var setProfile = document.getElementById('set-profile');
 setProfile.addEventListener('submit', profilePicSubmitHandler);
@@ -150,9 +225,6 @@ bioFormSubmit.addEventListener('submit', handleUserBio);
 
 var reviewSubmit = document.getElementById('myReview');
 reviewSubmit.addEventListener('submit', handleSubmitReview);
-
-var updateFavsSubmit = document.getElementById('boolean-questions');
-updateFavsSubmit.addEventListener('submit', favsUpdateHandleSubmit);
 
 var logout = document.getElementById('logout');
 logout.addEventListener('submit', logoutHandler);
