@@ -21,6 +21,7 @@ try {
 catch (error) {
   console.log('something went wrong', error);
 }
+
 try {
   userProfileIndex = JSON.parse(localStorage.userProfileIndex);
 }
@@ -68,5 +69,6 @@ function checkBoxGenerator(list, listQuestion, questionName) {
     ul.appendChild(li);
     li.appendChild(checkbox);
     li.appendChild(label);
+
   }
 }
