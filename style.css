@@ -21,7 +21,28 @@ body {
   text-align: center;
   text-shadow: 5px 5px 5px #010000;
 }
-
+nav {
+  width: 960px;
+  margin: 0 auto;
+}
+nav li {
+  display : inline;
+  margin-left: 15%;
+}
+nav a {
+text-decoration: none;
+font-size: 1.25em;
+color: white;
+font-family: 'Arimo', sans-serif;
+font-weight: lighter;
+text-align: center;
+}
+.logo{
+  width: 50px;
+  height: auto;
+  border-radius: 25px;
+  align: bottom;
+}
 li {
   list-style: none;
 }
@@ -107,16 +128,6 @@ input {
   display: inline;
 }
 
-nav li {
-  margin-left: 10px;
-  display: inline;
-}
-
-.logo{
-  width: 50px;
-  height: auto;
-  border-radius: 25px;
-}
 
 .profile-pic{
   width: 50px;
@@ -127,15 +138,23 @@ nav li {
   height: 100px;
   width: 200px;
 }
+.title-two {
+  font-size: 3em;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  color: white;
+  text-shadow: 5px 5px 5px #010000;
+}
 /*start css for edit profile page*/
 
 #top-left {
-  width: 33%;
+  width: 43%;
   height: 300px;
   background-color: white;
   margin: 0 auto;
   text-align: center;
   padding: 1%;
+  float: left;
 }
 #profile-pic {
   margin-top: 2%;
@@ -145,4 +164,52 @@ nav li {
 }
 #pic-submit {
   margin-bottom: 5%;
+}
+#bottom-left {
+  width: 43%;
+  height: 600px;
+  background-color: white;
+  margin: 0 auto;
+  padding: 1%;
+  float: left;
+  margin-top: 5%;
+
+}
+#update-wine-info {
+  margin-left: 25%;
+  margin-right: 10%;
+}
+#boolean-button {
+  text-align: center;
+  margin-bottom: 5%;
+}
+#top-right {
+  width: 43%;
+  height: auto;
+  background-color: white;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1%;
+  float: right;
+}
+
+#bottom-right  {
+  width: 43%;
+  height: auto;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 5%;
+  text-align: center;
+  padding: 1%;
+  float: right;
+}
+.textarea {
+  width: 300px;
+  height: 150px;
+}
+.submit {
+  margin-bottom: 5%;
+}
+#reviewBox {
+  text-align: center;
 }

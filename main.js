@@ -5,7 +5,7 @@ var userProfileIndex;
 var users = [];
 var wines = ['red','white','dessert wine','rose'];
 var wineList = ['cab','merlot','malbec'];
-var wineries = ['st.michelles','whatever winery'];
+var wineries = ['st.michelles','K Vintners','Barnard Griffin', 'Col Solare'];
 
 try {
   users = JSON.parse(localStorage.users);
