@@ -44,3 +44,4 @@ function handleUserBoxClick(event) {
 
   window.location ='viewprofile.html';
 }
+ 
