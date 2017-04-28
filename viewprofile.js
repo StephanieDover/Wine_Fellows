@@ -10,7 +10,7 @@ function profilePic() {
 
 function profileName() {
   var viewProfileName = document.getElementById('view-user-name');
-  viewProfileName.textContent = users[userProfileIndex].name;
+  viewProfileName.textContent = users[userProfileIndex].first;
 }
 
 function profileBio(){

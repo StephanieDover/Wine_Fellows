@@ -145,7 +145,7 @@ input {
 }
 #bottom-left {
   width: 43%;
-  height: 600px;
+  height: auto;
   background-color: white;
   margin: 0 auto;
   padding: 1%;
@@ -220,4 +220,44 @@ input {
   font-family: 'Arimo', sans-serif;
   font-size: 1em;
   text-decoration: underline;
+}
+/*start of styling for view profile*/
+#about-user {
+  width: 30%;
+  height: auto;
+  background-color: white;
+  margin: 0 auto;
+  padding: 1%;
+  float: left;
+  margin-top: 5%;
+  text-align: center;
+}
+#view-user-profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  margin-top: 5%;
+}
+#view-user-name {
+  font-size: 2em;
+}
+main{
+  width: 60%;
+  height: auto;
+  background-color: white;
+  margin: 0 auto;
+  padding: 1%;
+  float: right;
+  margin-top: 5%;
+  text-align: center;
+}
+main textarea {
+  width: 500px;
+  height: 200px;
+  margin-top: 5%;
+}
+main button {
+  text-align: center;
+  margin-bottom: 5%;
 }
