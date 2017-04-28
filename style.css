@@ -2,15 +2,68 @@
 .app{
   width: 960px;
   height: auto;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   box-sizing: content-box;
-
+  font-family: 'Arimo', sans-serif;
 }
 body {
-  background-image:  linear-gradient(127deg,#C24D44 -35%,#c643cb 130%);
+  width: 100%;
+  height: auto;
+  background-image: url('imgs/sunset.jpg');
+  background-size: 100% auto;
+}
+
+.title{
+  font-family: 'Lobster', cursive;
+  color: white;
+  font-size: 5em;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+#textSignUp{
+  text-align: center;
+}
+
+.login {
+  width: 40%;
+  height: auto;
+  background-color: white;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  font-family: 'Lobster', cursive;
+  padding: 1.5% 5%;
+}
+
+#formLogin{
+  margin-left: 25%;
+}
+
+.sign-up{
+  width: 40%;
+  height: auto;
+  margin: 0 auto;
+  background-color: white;
+  padding: 0.5% 5%;
+
 
 }
+
+#createUser{
+  margin-left: 12%;
+  margin-bottom: 5%;
+}
+
+.sign-up-submit{
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
 .community-boxes img{
   width: 200px;
   height: 200px;
@@ -33,6 +86,13 @@ body {
 
 }
 
+#profile-pic {
+  width: 250px;
+  height: auto;
+  border-radius: 100%;
+}
+
+#set-profile
 
 form {
   width: 300px;
@@ -41,9 +101,6 @@ form {
 input {
   display: inline;
 }
-/*p {
-  display: inline;
-}*/
 
 nav li {
   margin-left: 10px;

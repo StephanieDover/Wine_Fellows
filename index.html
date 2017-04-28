@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Sign up &amp; Login </title>
+  <title> Wine Fellows </title>
   <link rel="stylesheet" type="text/css" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
 </head>
 <body>
-
+  <div class="app">
+    <h1 class="title"> Wine Fellows </h1>
+    <div class="login">
   <form id="login-form">
-    <input name="login" type="text" placeholder="User Name">
+    <input name="login" type="text" placeholder="User Name" id="formLogin">
     <button type="submit"> Login </button>
   </form>
+</div>
+<div class="sign-up">
   <form id="createUser">
-
-    <h1>Sign up</h1>
+    <div id="textSignUp">
+    <h1 id="signUpTitle">Sign up</h1>
       <input name="firstName" type="text" placeholder="First Name" /></br>
       <input name="lastName" type="text" placeholder="Last Name" /></br>
       <input name="userName" type="text" placeholder="Username" /></br>
       <input type="text" name="profilePic" placeholder="Choose your Profile picture! ">
+    </div>
       <div id="boolean-questions"></div>
 
-      <button type="submit"> Find your Winefellow! </button>
+      <button type="submit" class="sign-up-submit"> Find your Winefellow! </button>
     </form>
+  </div>
+  </div>
     <script src="main.js"></script>
     <script src="index.js"></script>
 </body>
