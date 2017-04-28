@@ -45,35 +45,47 @@ function profileReview(){
   section.appendChild(list);
   for (var i = 0; i < users[userProfileIndex].reviews.length; i++)
   list.appendChild(listItem);
-  listItem.textContent = users[userProfileIndex].reviews[i];
+  listItem.textContent =
+   (users[userProfileIndex].reviews[i]);
 }
 
 function commentsHandler(event) {
   event.preventDefault();
   var textarea = event.target;
-  console.log(textarea);
   var comment = textarea.commentText.value;
+  var whoCommented = users[currentUserIndex].first;
+  console.log(comment);
   var commentTime = n + ' ' + time;
-  users[userProfileIndex].comments.push([commentTime, comment]);
-  console.log(users[userProfileIndex].comments);
-  console.log('doesnt work');
-  commentGenerator();
+  var commentObject = {
+    time: commentTime,
+    text: comment,
+    person: whoCommented,
+  };
+  // var commentsArray = [commentTime, comment];
+  users[userProfileIndex].comments.push(commentObject);
   try {
     localStorage.users = JSON.stringify(users);
   } catch (error){
     console.log(error);
   }
+  commentGenerator();
 }
 
 function commentGenerator(){
   var visitorComments = document.getElementById('visitor-comments');
-  var list = document.createElement('ul');
-  var listItem = document.createElement('li');
+
   for (var i = 0; i < users[userProfileIndex].comments.length; i++) {
+    var list = document.createElement('ul');
+    var listTime = document.createElement('li');
+    var listText = document.createElement('li');
+    var listPerson = document.createElement('li');
     visitorComments.appendChild(list);
-    list.appendChild(listItem);
-    listItem.textContent = users[userProfileIndex].comments[i];
-    console.log(users[userProfileIndex].comments[i]);
+    list.appendChild(listTime);
+    listTime.textContent = users[userProfileIndex].comments[i].time;
+    list.appendChild(listPerson );
+    listPerson.textContent = users[userProfileIndex].comments[i].person;
+    listText.textContent = users[userProfileIndex].comments[i].text;
+    list.appendChild(listText);
   }
 }
 
