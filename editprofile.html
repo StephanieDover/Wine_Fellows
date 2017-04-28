@@ -3,6 +3,8 @@
 <head>
   <title> Wine Fellows </title>
   <link rel="stylesheet" type="text/css" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
 </head>
 <body>
   <nav id="headerBar" class="header-bar">
@@ -30,30 +32,42 @@
           </form>
         </div>
         </div>
+
+        <div id="top-right">
+          <div class="box-shadow">
+        <form id="bio">
+          <h3> Add a Bio</h3>
+          <textarea class="textarea" name="userBio"></textarea></br>
+          <button class="submit">+ Bio</button>
+        </form>
+        <ul id="usersBio">
+        </ul>
+      </div>
+      </div>
+
 <div id="bottom-left">
+  <div class="box-shadow">
   <form id="update-wine-info">
     <div id="boolean-answers"></div>
-    <button>Update Your Wine Info!!!</button>
+    <button id="boolean-button">Update Your Wine Info!</button>
   </form>
 </div>
+</div>
 
+<div id="bottom-right">
+  <div class="box-shadow">
+    <form id="myReview">
+      <h3>Share a Wine Review</h3>
+    <textarea class="textarea" name="userWineReview"></textarea></br>
+    <button class="submit">+ Review </button>
+  </form>
+  <ul id="reviewBox">
+  </ul>
+</div>
+</div>
   <div id="display-Favorites">
   </div>
 
-<form id="bio">
-  <textarea name="userBio"></textarea></br>
-  <button>Submit Bio</button>
-</form>
-<ul id="usersBio">
-
-</ul>
-<form id="myReview">
-  <textarea name="userWineReview"></textarea></br>
-  <button> Submit Review </button>
-</form>
-<ul id="reviewBox">
-
-</ul>
 </div>
 
 <script src="main.js"> </script>

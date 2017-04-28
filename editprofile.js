@@ -62,16 +62,12 @@ function handleSubmitReview (event) {
   var form = event.target;
   var reviewUpdate = form.userWineReview.value;
   console.log(reviewUpdate);
-  form.reset();
-
   var section = document.getElementById('reviewBox');
-
   var pTag = document.createElement('p');
   section.appendChild(pTag);
   pTag.textContent = (reviewUpdate);
-
   users[currentUserIndex].reviews.push(reviewUpdate);
-}
+
 try {
   localStorage.users = JSON.stringify(users);
   console.log('users', users);
@@ -79,7 +75,21 @@ try {
 catch (error) {
   console.log('something went wrong', error);
 }
-
+form.reset();
+genorateReview();
+}
+function genorateReview(){
+  for (var i = 0; i <= users[currentUserIndex].reviews.length; i++) {
+    var unordered = document.getElementById('reviewBox');
+  var list = document.createElement('ul');
+  var listItem = document.createElement('li');
+  listItem.textContent =
+  (users[currentUserIndex].reviews[i]);
+  console.log(users[currentUserIndex].reviews[i])
+  unordered.appendChild(list);
+  list.appendChild(listItem);
+}
+}
 //
 function handleUserBio (event){
   event.preventDefault();
@@ -103,6 +113,7 @@ function populateBio(){
   var bioUpdate = document.getElementById('usersBio');
   var text = document.createTextNode(users[currentUserIndex].bio);
   var list = document.createElement('li');
+  list.setAttribute('id', 'bio-list');
   bioUpdate.appendChild(list);
   list.appendChild(text);
 }
@@ -203,10 +214,10 @@ function updateUserWineInfoHandler(event) {
 
 
 
-clickRememberer(wines, 'Choose your wine!', 'suh dude', users[currentUserIndex].wineColors);
-clickRememberer(wineList, 'These are your favorite wines!', 'suh dude', users[currentUserIndex].favWines);
-clickRememberer(wineries, 'Wine Spots?!??!?!', 'suh dude', users[currentUserIndex].favWineries);
-
+clickRememberer(wines, 'Update your wine!', 'suh dude', users[currentUserIndex].wineColors);
+clickRememberer(wineList, 'Update your favorite wines!', 'suh dude', users[currentUserIndex].favWines);
+clickRememberer(wineries, 'Update Your Favorite wineries', 'suh dude', users[currentUserIndex].favWineries);
+genorateReview()
 
 
 // clickRememberer(users[currentUserIndex].favWine);
