@@ -3,7 +3,7 @@
 var currentUserIndex;
 var userProfileIndex;
 var users = [];
-var wines = ['red','white'];
+var wines = ['red','white','dessert wine','rose'];
 var wineList = ['cab','merlot','malbec'];
 var wineries = ['st.michelles','whatever winery'];
 
