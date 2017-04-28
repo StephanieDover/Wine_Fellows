@@ -11,7 +11,7 @@ function handleLoginSubmit(event) {
       // window.location = '#';
       userFound = true;
       currentUserIndex = i;
-
+      communityReDirect();
       try {
         localStorage.currentUserIndex = JSON.stringify(currentUserIndex);
         console.log('users', users);
@@ -82,6 +82,10 @@ function signUpHandleSubmit(event) {
 //redirects to edit porfile
 function profileReDirect() {
   window.location.replace('editprofile.html');
+}
+
+function communityReDirect() {
+  window.location.replace('community.html');
 }
 
 checkBoxGenerator(wines, 'Whats your favorite wine color?', 'favwine');
